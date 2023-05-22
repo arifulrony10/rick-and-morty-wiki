@@ -1,20 +1,32 @@
-const CharacterCard = () => {
-  return (
-    
-    <article className="max-w-sm rounded overflow-hidden shadow-lg">
-        <img class="w-full" src="" alt="" />
-        <div class="px-6 py-4">
-    <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
-        <p class="text-gray-700 text-base">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
-        </p>
-    </div>
-    <div class="px-6 pt-4 pb-2">
-        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
-        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
-        <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
-    </div>
-    </article>
-  )
-}
-export default CharacterCard
+import './characterCard.css';
+
+const CharacterCard = ({ charecter }) => {
+    const { name, image, gender, status, type, location } = charecter;
+
+    return (
+        <article className='max-w-sm rounded-lg overflow-hidden shadow-lg hover:shadow-emerald-300 relative'>
+            <img className='w-full' src={image} alt='' />
+            <div className='px-6 py-4'>
+                <h3 className='font-bold text-xl mb-2'>{name}</h3>
+                <div>
+                    {/* TODO:  status can be 'alive'/'dead'/'unknown'*/}
+                    <div
+                        className={`border p-2 px-6 inline-block rounded-full font-bold  ${status.toLowerCase()} absolute top-1 right-1`}
+                    >
+                        {status}
+                    </div>
+                    <span>{type}</span>
+                </div>
+                <div>
+                    <p>
+                        <span className='text-slate-500'>
+                            Last known location:
+                        </span>
+                        <br /> <span className='text-xl'>{location.name}</span>
+                    </p>
+                </div>
+            </div>
+        </article>
+    );
+};
+export default CharacterCard;

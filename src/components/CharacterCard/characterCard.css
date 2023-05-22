@@ -1,0 +1,30 @@
+.alive {
+    border-color: green;
+    color: green;
+    background-color: rgb(39, 233, 39);
+}
+.alivedot {
+    border-color: green;
+}
+.dead {
+    border-color: red;
+    color: red;
+    background-color: rgb(245, 132, 132);
+}
+.unknown {
+    border-color: orange;
+    color: orange;
+    background-color: rgb(255, 217, 151);
+}
+/* .alive:hover {
+    background-color: green;
+    color: white;
+}
+.dead:hover {
+    background-color: red;
+    color: white;
+}
+.unknown:hover {
+    background-color: orange;
+    color: white;
+} */
