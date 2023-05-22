@@ -1,4 +1,4 @@
-const Search = () => {
+const Search = ({ setSearch }) => {
     return (
         <div className='mx-auto m-2 max-w-3/4 mb-5'>
             <form
