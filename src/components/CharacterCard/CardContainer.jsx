@@ -1,7 +1,8 @@
 import CharacterCard from './CharacterCard';
 
 const CardContainer = ({ characters }) => {
-    const { info, results: charactersData } = characters;
+    const charactersData = characters?.results;
+    // const { info, results: charactersData } = characters;
 
     return (
         <div className='grid md:grid-cols-3 lg:grid-cols-4 gap-4'>

@@ -14,7 +14,7 @@ const Home = () => {
     const [search, setSearch] = useState('');
 
     const { data, isPending, error } = useFetch(
-        `https://rickandmortyapi.com/api/character/?page=${pageNumber}`
+        `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}`
     );
 
     return (
@@ -41,7 +41,11 @@ const Home = () => {
                     )}
                 </div>
             </div>
-            <Pagination setPagenumber={setPagenumber} pageNumber={pageNumber} />
+            <Pagination
+                setPagenumber={setPagenumber}
+                pageNumber={pageNumber}
+                data={data}
+            />
         </div>
     );
 };
