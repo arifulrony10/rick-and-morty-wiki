@@ -16,7 +16,7 @@ const Pagination = ({ pageNumber, setPagenumber }) => {
       {pageNumber === 1 ? (
         <button
           onClick={prevBtn}
-          className='bg-white h-full  text-green-900 font-bold py-2 px-4 border-2 border-green-900 rounded hover:bg-green-500  hover:text-white transition ease-in-out delay-150 hover:ease-in-out delay-150 cursor-not-allowed opacity-50'
+          className='bg-white h-full text-green-900 font-bold py-2 px-4 border-2 border-green-900 rounded hover:bg-green-500 hover:text-white transition ease-in-out delay-150 hover:ease-in-out delay-150 cursor-not-allowed opacity-50'
         >
           Prev
         </button>
