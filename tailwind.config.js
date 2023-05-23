@@ -6,6 +6,11 @@ export default {
   ],
   theme: {
     extend: {},
+    fontFamily: {
+      kanit: ['Kanit', 'sans-serif'],
+      inter: ['Inter', 'sans-serif'],
+      creepSter: ['Creepster', 'cursive']
+    },
   },
   plugins: [],
 }

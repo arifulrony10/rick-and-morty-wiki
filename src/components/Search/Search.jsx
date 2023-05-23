@@ -9,9 +9,9 @@ const Search = ({ setSearch }) => {
                     type='text'
                     name=''
                     id=''
-                    className='border-2 md:min-w-2/5 md:w-3/5 border-emerald-900 rounded p-2 h-full text-lg shadow shadow-emerald-400 focus:border-emerald-900 focus:outline-none'
+                    className='border-2 md:min-w-2/5 md:w-3/5 border-green-900 rounded p-2 h-full text-lg shadow shadow-green-400 focus:border-green-900 focus:outline-none'
                 />
-                <button className='bg-blue-400 h-full hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded'>
+                <button className='bg-white h-full  text-green-900 font-bold py-2 px-4 border-2 border-green-900 rounded hover:bg-green-500  hover:text-white transition ease-in-out delay-150 hover:ease-in-out delay-150 '>
                     Button
                 </button>
             </form>
