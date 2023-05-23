@@ -19,7 +19,7 @@ const Home = () => {
 
     return (
         <div>
-            <Search setSearch={setSearch} />
+            <Search setSearch={setSearch} setPagenumber={setPagenumber} />
 
             <div className='flex justify-center'>
                 {/* Filter container */}
