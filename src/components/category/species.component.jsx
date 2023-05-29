@@ -12,7 +12,7 @@ const SpeciesFilter = ({ setSpecies, setPageNumber }) => {
     "Disease",
     "Robot",
     "Cronenberg",
-    // "Planet",
+    "Planet",
   ];
   return (
     <div className="accordion-item">

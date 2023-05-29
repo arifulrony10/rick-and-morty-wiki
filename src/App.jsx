@@ -10,9 +10,14 @@ import Pagination from "./components/Pagination/pagination.component";
 import Search from "./components/Search/search.component";
 import Footer from "./components/footer/footer.component";
 
+// Spinner
+import CircleLoader from "react-spinners/CircleLoader";
+
 const App = () => {
   const [pageNumber, setPageNumber] = useState(1);
   const [fetchedData, setFetchedData] = useState([]);
+  const [error, setError] = useState(null);
+  const [pending, setPending] = useState(false);
   const [search, setSearch] = useState("");
   const [status, setStatus] = useState("");
   const [gender, setGender] = useState("");
@@ -24,9 +29,15 @@ const App = () => {
 
   useEffect(() => {
     const fetechData = async (url) => {
-      const response = await fetch(url);
-      const data = await response.json();
-      setFetchedData(data);
+      try {
+        setPending(true);
+        const response = await fetch(url);
+        const data = await response.json();
+        setFetchedData(data);
+        setPending(false);
+      } catch (error) {
+        console.log(error);
+      }
     };
     fetechData(api);
   }, [api]);
@@ -51,7 +62,14 @@ const App = () => {
           </div>
           {/* Cards */}
           <div className="col-md-8">
-            <Cards characters={fetchedData} />
+            {pending ? (
+              <div className="d-flex flex-column justify-content-center align-items-center">
+                <h2 className="text-success">L o a d i n g...</h2> 
+                <CircleLoader color="#36d7b7" size={100}/>
+              </div>
+            ) : (
+              <Cards characters={fetchedData} />
+            )}
           </div>
         </div>
       </div>
