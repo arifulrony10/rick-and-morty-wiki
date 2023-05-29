@@ -1,22 +1,21 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 // Import Bootstrap
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap";
 
 // Components
-import Filters from './components/Filters/filters.component';
-import Cards from './components/Cards/cards.component';
+import Filters from "./components/Filters/filters.component";
+import Cards from "./components/Cards/cards.component";
+import Pagination from "./components/Pagination/pagination.component";
+import Search from "./components/Search/search.component";
 
 const App = () => {
   const [pageNumber, setPageNumber] = useState(1);
   const [fetchedData, setFetchedData] = useState([]);
-  const [api, setApi] = useState(
-    `https://rickandmortyapi.com/api/character/?page=${pageNumber}`
-  );
-
+  const [search, setSearch] = useState("");
   const { info, results } = fetchedData;
 
-  // let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}`
+  const api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}`;
 
   useEffect(() => {
     const fetechData = async (url) => {
@@ -29,19 +28,21 @@ const App = () => {
 
   return (
     <div>
-      <h1 className='text-center rm-title my-3'>
-        Rick and Morty <span className='text-primary'>Wiki</span>
+      <h1 className="text-center rm-title my-3">
+        Rick and Morty <span className="text-primary">Wiki</span>
       </h1>
-      <div className='container'>
-        <div className='row'>
-          <div className='col-md-3'>
+      <Search setSearch={setSearch} setPageNumber={setPageNumber} />
+      <div className="container">
+        <div className="row">
+          <div className="col-md-3">
             <Filters />
           </div>
-          <div className='col-md-8'>
+          <div className="col-md-8">
             <Cards characters={fetchedData} />
           </div>
         </div>
       </div>
+      <Pagination pageNumber={pageNumber} setPageNumber={setPageNumber} />
     </div>
   );
 };
