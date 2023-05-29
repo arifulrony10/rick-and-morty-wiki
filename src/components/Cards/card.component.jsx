@@ -40,7 +40,10 @@ const Card = ({ character }) => {
     // </div>
 
     <div className='col-sm relative' style={{ minWidth: '15rem' }}>
-      <div className='card' style={{ paddingLeft: '0px', paddingRight: '0px' }}>
+      <div
+        className='card border-2 border-success'
+        style={{ paddingLeft: '0px', paddingRight: '0px' }}
+      >
         <img src={image} className='card-img-top img-fluid' alt={name} />
         <div className='card-body'>
           <h3 className='card-title mb-1'>{name}</h3>
@@ -54,7 +57,7 @@ const Card = ({ character }) => {
           {/* Status */}
           {status && status === 'Alive' ? (
             <div
-              className={`badge rounded-pill bg-primary position-absolute`}
+              className={`badge rounded-pill bg-success position-absolute`}
               style={{ top: '10px', right: '20px' }}
             >
               {status}

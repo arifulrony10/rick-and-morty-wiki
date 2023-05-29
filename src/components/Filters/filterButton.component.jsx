@@ -14,7 +14,7 @@ const FilterButton = ({ name, index, items, setPageNumber, task }) => {
           task(items);
         }}
       />
-      <label className='btn btn-outline-primary' htmlFor={`${name}-${index}`}>
+      <label className='btn btn-outline-success' htmlFor={`${name}-${index}`}>
         {items}
       </label>
     </div>
