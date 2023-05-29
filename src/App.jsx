@@ -8,6 +8,7 @@ import Filters from "./components/Filters/filters.component";
 import Cards from "./components/Cards/cards.component";
 import Pagination from "./components/Pagination/pagination.component";
 import Search from "./components/Search/search.component";
+import Footer from "./components/footer/footer.component";
 
 const App = () => {
   const [pageNumber, setPageNumber] = useState(1);
@@ -60,6 +61,8 @@ const App = () => {
         setPageNumber={setPageNumber}
         info={info}
       />
+      {/* Footer */}
+      <Footer />
     </div>
   );
 };
