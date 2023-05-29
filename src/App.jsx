@@ -1,27 +1,27 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 // Import Bootstrap
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap';
 
 // Components
-import Filters from "./components/Filters/filters.component";
-import Cards from "./components/Cards/cards.component";
-import Pagination from "./components/Pagination/pagination.component";
-import Search from "./components/Search/search.component";
-import Footer from "./components/footer/footer.component";
+import Filters from './components/Filters/filters.component';
+import Cards from './components/Cards/cards.component';
+import Pagination from './components/Pagination/pagination.component';
+import Search from './components/Search/search.component';
+import Footer from './components/footer/footer.component';
 
 // Spinner
-import CircleLoader from "react-spinners/CircleLoader";
+import CircleLoader from 'react-spinners/CircleLoader';
 
 const App = () => {
   const [pageNumber, setPageNumber] = useState(1);
   const [fetchedData, setFetchedData] = useState([]);
   const [error, setError] = useState(null);
   const [pending, setPending] = useState(false);
-  const [search, setSearch] = useState("");
-  const [status, setStatus] = useState("");
-  const [gender, setGender] = useState("");
-  const [species, setSpecies] = useState("");
+  const [search, setSearch] = useState('');
+  const [status, setStatus] = useState('');
+  const [gender, setGender] = useState('');
+  const [species, setSpecies] = useState('');
 
   const { info, results } = fetchedData;
 
@@ -43,16 +43,16 @@ const App = () => {
   }, [api]);
 
   return (
-    <div>
-      <h1 className="text-center rm-title my-3">
-        Rick and Morty <span className="text-primary">Wiki</span>
+    <div style={{ minHeight: '100vh!important' }}>
+      <h1 className='text-center rm-title my-3'>
+        Rick and Morty <span className='text-primary'>Wiki</span>
       </h1>
       {/* Search */}
       <Search setSearch={setSearch} setPageNumber={setPageNumber} />
-      <div className="container">
-        <div className="row">
+      <div className='container'>
+        <div className='row mx-auto'>
           {/*  Filters */}
-          <div className="col-md-3">
+          <div className='col-md-3'>
             <Filters
               setPageNumber={setPageNumber}
               setStatus={setStatus}
@@ -61,11 +61,11 @@ const App = () => {
             />
           </div>
           {/* Cards */}
-          <div className="col-md-8">
+          <div className='col-md-9'>
             {pending ? (
-              <div className="d-flex flex-column justify-content-center align-items-center">
-                <h2 className="text-success">L o a d i n g...</h2> 
-                <CircleLoader color="#36d7b7" size={100}/>
+              <div className='portalLoader'>
+                {/* <h2 className='text-success'>L o a d i n g...</h2> */}
+                <CircleLoader color='#5cb85c' size={200} />
               </div>
             ) : (
               <Cards characters={fetchedData} />
