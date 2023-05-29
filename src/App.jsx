@@ -42,7 +42,7 @@ const App = () => {
           </div>
         </div>
       </div>
-      <Pagination pageNumber={pageNumber} setPageNumber={setPageNumber} />
+      <Pagination pageNumber={pageNumber} setPageNumber={setPageNumber} info={info}/>
     </div>
   );
 };
