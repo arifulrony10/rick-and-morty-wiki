@@ -6,7 +6,7 @@ import styles from './pagination.module.scss';
 const Pagination = ({ pageNumber, setPageNumber, info }) => {
   return (
     <ReactPaginate
-      className='pagination justify-content-center gap-4 my-5'
+      className='pagination justify-content-center gap-4 my-5 flex-wrap'
       previousClassName={`btn btn-primary ${styles.paginationBtn}`}
       nextClassName={`btn btn-primary ${styles.paginationBtn}`}
       pageClassName='page-item'
