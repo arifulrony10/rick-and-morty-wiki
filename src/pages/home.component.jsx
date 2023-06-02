@@ -22,8 +22,10 @@ const Home = () => {
   const [status, setStatus] = useState('');
   const [gender, setGender] = useState('');
   const [species, setSpecies] = useState('');
+  const [charactersData, setCharactersData] = useState([]);
+  const [info, setInfo] = useState([]);
 
-  const { info, results } = fetchedData;
+  // const { info, results } = fetchedData;
 
   const api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}&status=${status}&gender=${gender}&species=${species}`;
 
@@ -34,6 +36,8 @@ const Home = () => {
         const response = await fetch(url);
         const data = await response.json();
         setFetchedData(data);
+        setCharactersData(data.results);
+        setInfo(data.info);
         setPending(false);
       } catch (error) {
         console.log(error);
@@ -65,7 +69,11 @@ const Home = () => {
                 <CircleLoader color='#5cb85c' size={200} />
               </div>
             ) : (
-              <Cards characters={fetchedData} />
+              <Cards
+                // characters={fetchedData}
+                charactersData={charactersData}
+                info={info}
+              />
             )}
           </div>
         </div>

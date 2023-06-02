@@ -1,10 +1,7 @@
 import { useState } from 'react';
 const Card = ({ character }) => {
-  // console.log(character);
-
   const { name, gender, image, status, type, url, species, location, origin } =
     character;
-  console.log('🚀 ~ file: card.component.jsx:6 ~ Card ~ status:', status);
 
   const [statusBg, setStatusBg] = useState('');
 

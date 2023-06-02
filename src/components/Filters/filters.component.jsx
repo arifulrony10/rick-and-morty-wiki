@@ -13,7 +13,7 @@ const Filters = ({ setPageNumber, setStatus, setGender, setSpecies }) => {
 
   return (
     <div className='mb-4'>
-      <h2 className='text center fw-bold fs-4 mb-2'>Filters</h2>
+      <h2 className='text-center fw-bold fs-4 mb-2'>Filters</h2>
       <div className='d-flex justify-content-center align-items-center'>
         <div
           style={{ cursor: 'pointer' }}

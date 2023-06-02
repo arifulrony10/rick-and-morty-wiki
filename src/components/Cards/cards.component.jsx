@@ -1,7 +1,7 @@
 import Card from './card.component';
 
-const Cards = ({ characters }) => {
-  const { info, results: charactersData } = characters;
+const Cards = ({ charactersData }) => {
+  // const { info, results: charactersData } = characters;
 
   if (charactersData) {
     return (
