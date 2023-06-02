@@ -57,7 +57,11 @@ const Episodes = () => {
         </div>
         <div className='col-md-8'>
           <div className='row'>
-            {pending ? 'Loading' : <Cards charactersData={results} />}
+            {pending ? (
+              'Loading'
+            ) : (
+              <Cards page='/episodes/' charactersData={results} />
+            )}
           </div>
         </div>
       </div>

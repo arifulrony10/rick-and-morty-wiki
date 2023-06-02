@@ -1,13 +1,13 @@
 import Card from './card.component';
 
-const Cards = ({ charactersData }) => {
+const Cards = ({ charactersData, page }) => {
   // const { info, results: charactersData } = characters;
 
   if (charactersData) {
     return (
       <div className='row gap-2'>
         {charactersData?.map((character) => (
-          <Card key={character.id} character={character} />
+          <Card page={page} key={character.id} character={character} />
         ))}
       </div>
     );

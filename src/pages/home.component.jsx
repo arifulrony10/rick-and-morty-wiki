@@ -48,6 +48,7 @@ const Home = () => {
 
   return (
     <div style={{ minHeight: '100vh!important' }}>
+      <h1 className='text-center'>Characters</h1>
       {/* Search */}
       <Search setSearch={setSearch} setPageNumber={setPageNumber} />
       <div className='container'>
@@ -71,6 +72,7 @@ const Home = () => {
             ) : (
               <Cards
                 // characters={fetchedData}
+                page='/'
                 charactersData={charactersData}
                 info={info}
               />

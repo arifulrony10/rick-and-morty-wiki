@@ -1,7 +1,18 @@
 import { useState } from 'react';
-const Card = ({ character }) => {
-  const { name, gender, image, status, type, url, species, location, origin } =
-    character;
+import { Link } from 'react-router-dom';
+const Card = ({ character, page }) => {
+  const {
+    id,
+    name,
+    gender,
+    image,
+    status,
+    type,
+    url,
+    species,
+    location,
+    origin,
+  } = character;
 
   const [statusBg, setStatusBg] = useState('');
 
@@ -16,27 +27,11 @@ const Card = ({ character }) => {
   };
 
   return (
-    // <div className='col-lg position-relative ' style={{ minWidth: '15rem' }}>
-    //   <img src={image} alt={name} className='img-fluid' />
-    //   <div className='content'>
-    //     <h2 className='fs-4 fw-bold mb-3'>{name}</h2>
-    //     <div>
-    //       <p>Gender: {gender}</p>
-    //       <p className='fs-6'>
-    //         Last Location: <br /> <span className='fs-5'>{location?.name}</span>
-    //       </p>
-    //       <p>{species}</p>
-    //     </div>
-    //   </div>
-    //   {/* FIXME: This is not working */}
-    //   <div
-    //     className={`${styles.badge} position-absolute badge badge-primary ${status}`}
-    //   >
-    //     {status}
-    //   </div>
-    // </div>
-
-    <div className='col-sm relative' style={{ minWidth: '15rem' }}>
+    <Link
+      to={`${page}${id}`}
+      className='col-sm relative'
+      style={{ minWidth: '15rem', textDecoration: 'none' }}
+    >
       <div
         className='card border-2 border-success'
         style={{ paddingLeft: '0px', paddingRight: '0px' }}
@@ -76,7 +71,7 @@ const Card = ({ character }) => {
           )}
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 export default Card;
