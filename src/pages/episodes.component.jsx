@@ -40,7 +40,7 @@ const Episodes = () => {
   }, [api]);
 
   return (
-    <div className='container'>
+    <div className='container' style={{ minHeight: '100vh!important' }}>
       <div className='row mb-4'>
         <h1 className='text-center'>
           Episode:{' '}
@@ -51,11 +51,11 @@ const Episodes = () => {
         </h5>
       </div>
       <div className='row'>
-        <div className='col-3'>
+        <div className='col-md-3'>
           <h3 className='text-center fw-bold fs-4 mb-2'>Pick Episodes</h3>
-          <InputGroup setId={setId} totalPage={51} episodeName={name} />
+          <InputGroup setId={setId} totalPage={51} name={'Episode'} />
         </div>
-        <div className='col-8'>
+        <div className='col-md-8'>
           <div className='row'>
             {pending ? 'Loading' : <Cards charactersData={results} />}
           </div>

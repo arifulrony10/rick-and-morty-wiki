@@ -46,10 +46,10 @@ const Card = ({ character }) => {
           <h3 className='card-title mb-1'>{name}</h3>
           <p className='card-text'>{type}</p>
           <p className='card-text mb-1'>{species}</p>
-          <p className='card-text mb-1 '>
+          <div className='card-text mb-1 '>
             <div className='text-muted'>Location:</div>
             {location?.name}
-          </p>
+          </div>
           <p className='card-text mb-1'>Origin: {origin?.name}</p>
           {/* Status */}
           {status && status === 'Alive' ? (
