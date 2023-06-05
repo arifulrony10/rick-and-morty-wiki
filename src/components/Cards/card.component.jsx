@@ -33,7 +33,7 @@ const Card = ({ character, page }) => {
       style={{ minWidth: '15rem', textDecoration: 'none' }}
     >
       <div
-        className='card border-2 border-success'
+        className='card h-100 border-2 border-success'
         style={{ paddingLeft: '0px', paddingRight: '0px' }}
       >
         <img src={image} className='card-img-top img-fluid' alt={name} />
